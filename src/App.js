@@ -6,9 +6,7 @@ import {
   SearchBox,
   Pagination,
   Highlight,
-  ClearRefinements,
-  RefinementList,
-  Configure,
+  HierarchicalMenu,
 } from 'react-instantsearch-dom';
 import PropTypes from 'prop-types';
 import './App.css';
@@ -28,10 +26,10 @@ class App extends Component {
           searchClient={searchClient}
         >
           <div className="left-panel">
-            <ClearRefinements />
-            <h2>Brands</h2>
-            <RefinementList attribute="brand" />
-            <Configure hitsPerPage={8} />
+            <h2>Categorieën</h2>
+            <HierarchicalMenu
+              attributes={['categories.lvl0', 'categories.lvl1']}
+            />
           </div>
           <div className="right-panel">
             <SearchBox />
